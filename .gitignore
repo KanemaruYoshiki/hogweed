@@ -1,0 +1,5 @@
+# Pythonのコンパイルファイル
+__pycache__/
+
+# 予測モデル
+models/
