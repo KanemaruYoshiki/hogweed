@@ -1,0 +1,70 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
+  background-color: #F8EDE3;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+/* ヘッダー */
+.navbar {
+  background-color: #BDD2B6;
+  height: 60px;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #798777;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.custom-gallery-position {
+  margin-left: 55%;
+}
+
+.gallery-button { 
+  color: #ffffff;           
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 4px solid #ffffff;
+  text-decoration: none;
+  width: 160px;
+  text-align: center;
+  padding-top: 18px;
+  padding-bottom: 14px;
+}
+
+.gallery-button:hover {
+  color: #798777;
+  border-bottom-color: #798777;
+}
+
+/* メイン */
+
+/* フッター */
+footer {
+  background-color: #BDD2B6;
+  height: 80px;
+  color: #4d4d4d;
+  font-size: 12px;
+  padding-top: 22px;
+}
+
+.address {
+  margin-right: 10px;
+  margin-bottom: 0;
+}
+
+.address > a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.email > a:hover {
+  color: #798777;
+}

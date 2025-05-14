@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="今までに判別した、画像を見ることができます。">
+  <title>ギャラリー</title>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!-- Font Awesome icons(free version) -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/gallery.css' %}">
+</head>
+
+<body class="d-flex flex-column">
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand text-decoration-none" href="top.html">
+          <i class="fa-solid fa-leaf d-inline-block align-text-top" style="color: #63E6BE; font-size: 24px; padding-top: 10px;" alt="ロゴ"></i>
+          <h1 class="d-inline-block align-text-top">ブタクサチェッカー</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav custom-gallery-position">
+            <li class="nav-item">
+              <a class="gallery-button nav-link" href="{% url 'predict' %}">トップ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+  </main>
+
+  <footer>
+    <div class="footer mt-auto text-center">
+      <p class="address">連絡先:<a href="mailto:k.yoshiki.44k@gmail.com">k.yoshiki.44k@gmail.com</a></p>
+      <p class="copyright">&copy;2025 KanemaruYoshiki</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <!-- jQuiry -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(function() {
+        $('#id_image').on('change', function() {
+        var reader = new FileReader();
+        reader.onload = function () {
+            $(".preview").attr('src', reader.result);
+            $(".preview").show();
+            $(".img_data").val(reader.result);
+        }
+        reader.readAsDataURL(this.files[0]);
+        $(".prediction").text('');
+        });
+    });
+  </script>
+</body>
+</html>

@@ -34,4 +34,10 @@ def predict(request):
         else:
             form = ImageUploadForm()
             return render(request, 'top.html', {'form': form})
-        
+
+# gallery
+from .models import PredictionResult
+
+def gallery(request):
+    results = PredictionResult.objects.order_by('-timestamp')  # 新しい順
+    return render(request, 'gallery.html', {'results': results})
